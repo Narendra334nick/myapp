@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+   
+</head>
+<body>
+    <form action="/todo" method="POST">
+        <div id="myDIV" class="header">
+            <h2 style="margin:5px">My To Do List</h2>
+            <input type="text" name="item" placeholder="Title...">
+            <button type="submit" class="addBtn">Add</button>
+        </div>
+    
+    </form>
+
+    
+
+    <ul type="none" id = "ul">
+        <% for(var i = 0;i < todolist.length; i++){ %>
+            <li class="data"> <form action="/del/<%= todolist[i]._id %>" method="POST"><input type="checkbox" id="<%= todolist[i]._id %>" class="check"><%= todolist[i].name %> <button type="submit" class  = "close" id="<%= todolist[i]._id%>"><b>	&#10005;</b></button></form></li>
+        <% } %>
+    </ul>
+
+   
+
+    <script src="/update.js" type="text/javascript"></script>
+
+
+    
+</body>
+</html>
