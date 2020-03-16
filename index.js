@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 const path = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
@@ -76,6 +76,6 @@ var Todo = mongoose.model('Todo',todoSchema);
             });
     });
     
-app.listen(process.env.PORT || 8080,()=>{
+app.listen(port,()=>{
     console.log(`server running at http://localhost:${port}`);
 })
