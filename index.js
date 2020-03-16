@@ -76,6 +76,6 @@ var Todo = mongoose.model('Todo',todoSchema);
             });
     });
     
-app.listen(port,()=>{
+app.listen(process.env.PORT || 8080,()=>{
     console.log(`server running at http://localhost:${port}`);
 })
